@@ -5,4 +5,8 @@
     height: 300px;
 }
 
+body .modal-dialog {
+    max-width: 85%;
+    width: auto !important;
+}
 /*.fc-day:hover{background:lightblue;cursor: pointer;}*/

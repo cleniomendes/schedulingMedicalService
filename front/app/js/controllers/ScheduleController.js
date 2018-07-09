@@ -1,16 +1,8 @@
 angular.module('schedule_medical').controller('ScheduleController',
-function($scope) {
-    let data = Date.now();
-   /* $scope.eventSources = [ 
-        {"events":
-            [
-                {"id":1,"title":"Teste Tal","start":"2018-07-09 05:30:00.0","end":"2018-07-09 06:00:00.0"},
-                {"id":2,"title":"Teste Tal 2","start":"2018-07-10 06:00:00.0","end":"2018-07-10 06:00:00.0"}
-            ]
-        }                
-    ]; */
-    $scope.title = "";
-    $scope.total_price = 0;
+function($scope, $http) {
+    getProcedures();
+    getMaterials();
+    
     $scope.uiConfig = {
         calendar:{      
           height: 450,
@@ -80,7 +72,7 @@ function($scope) {
         
           },
           dayClick: function(date, allDay, jsEvent, view) {
-              $scope.title = "Marcar Consulta " +  date.format('DD/MM/YYYY'); 
+              $scope.title = "Agendar para dia " +  date.format('DD/MM/YYYY'); 
               $('#calendarModal').modal();
           },
         
@@ -88,4 +80,75 @@ function($scope) {
           eventResize: $scope.alertOnResize
         }
       };      
+
+    $scope.list = [];
+    $scope.title = "";
+    $scope.total_price=0; 
+    
+    function getProcedures(){
+        $scope.procedureItem = [];
+        $http({
+            method: 'GET',
+            url: 'http://localhost:8000/api/procedure',
+            dataType: 'json'
+          }).then(function successCallback(data) {
+                $scope.procedureItem = data;
+            }, function errorCallback(response) {          
+        });
+    }
+
+    function getMaterials(){
+        $scope.materialItem = [];
+        $http({
+            method: 'GET',
+            url: 'http://localhost:8000/api/material',
+            dataType: 'json'
+          }).then(function successCallback(data) {
+                $scope.materialItem = data;
+            }, function errorCallback(response) {          
+        });
+    }
+
+    $scope.addProcedure = function(){
+        $scope.list.push({
+            type: "Procedimento",
+            procedure: $scope.selectedProcedure.id,
+            name: $scope.selectedProcedure.name,
+            individualPrice: $scope.selectedProcedure.price,
+            quantity_procedure: $scope.quantityProcedure,
+            totalPrice: parseFloat($scope.selectedProcedure.price * $scope.quantityProcedure).toFixed(2)
+        });     
+        $scope.selectedProcedure=null;   
+        $scope.quantityProcedure=null;        
+        calcTotal();
+    }
+
+    $scope.addMaterial = function(){
+        $scope.list.push({
+            type: "Material",
+            material: $scope.selectedMaterial.id,
+            name: $scope.selectedMaterial.name,
+            individualPrice: $scope.selectedMaterial.price,
+            quantity_material: $scope.quantityMaterial,
+            totalPrice: parseFloat($scope.selectedMaterial.price * $scope.quantityMaterial).toFixed(2)
+        });     
+
+        $scope.selectedMaterial=null;   
+        $scope.quantityMaterial=null;
+        calcTotal();
+    }
+    function calcTotal(){
+        let total = 0.00;
+        if ($scope.list.length>0){            
+            for(d of $scope.list){
+                total = parseFloat(total) + parseFloat(d.totalPrice);                
+            }
+        }
+        $scope.total_price = total.toFixed(2);
+    }
+
+    $scope.deleteService = function(index){
+        $scope.list.splice(index, 1);
+        calcTotal();
+    }
 });

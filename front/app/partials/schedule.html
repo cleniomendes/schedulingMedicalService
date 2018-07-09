@@ -6,8 +6,8 @@
 <div class="container">    
     <div class="row">
         <div class="col-md-4">
-        <h2>Marque sua consulta conosco</h2>
-        <p>Para realizar a marcação, escolha a data disponível no calendário ao lado e preencha o formulário</p>        
+        <h2>Agendamento Serviços Médicos</h2>
+        <p>Para realizar o agendamento, escolha a data disponível no calendário ao lado e preencha o formulário</p>        
         </div>
         <div class="col-md-8">
                 <div ui-calendar="uiConfig.calendar" ng-model="eventSources">
@@ -25,34 +25,99 @@
             </div>
         <div id="modalBody" class="modal-body"> 
             <form>
-                <div class="form-group row">
-                    <label for="patientName" class="col-sm-2 col-form-label">Paciente</label>
-                    <div class="col-sm-10">
-                    <input type="text" class="form-control" id="patientName" placeholder="paciente">
-                    </div>
+                <div class="form-group">
+                    <label for="patientName" class=" form-control-label">Paciente</label>
+                    <input type="text" id="patientName" placeholder="nome do paciente" class="form-control" required>
                 </div>
-                <div class="form-group row">
-                    <label for="doctorName" class="col-sm-2 col-form-label">Médico</label>
-                    <div class="col-sm-10">
-                    <input type="text" class="form-control" id="doctorName" placeholder="médico">
-                    </div>
+
+                <div class="form-group">
+                    <label for="doctorName" class=" form-control-label">Médico</label>
+                    <input type="text" id="doctorName" placeholder="nome do médico" class="form-control" required>
                 </div>
-                <div class="form-group row">
-                    <label for="clinicName" class="col-sm-2 col-form-label">Consultório</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="clinicName" placeholder="consultório">
+
+                <div class="form-group">
+                    <label for="clinicName" class=" form-control-label">Consultório</label>
+                    <input type="text" id="clinicName" placeholder="nome do consultório" class="form-control" required>
+                </div>                
+        
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="procedure" class="control-label mb-1">Procedimento</label>
+                        <select ng-model="selectedProcedure" ng-options="i as i.name for i in procedureItem.data" class="form-control"></select>
                     </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="quantityProcedure" class="control-label mb-1">Quantidade</label>
+                        <input type="number" ng-model="quantityProcedure" min="1" value="1" class="form-control">
+                    </div>                    
+
+                    
                 </div>
-                <div class="form-group row">
-                    <label for="clinicName" class="col-sm-2 col-form-label">Preço Total</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static">{{total_price}}</p>
+
+                <div class="form-group">
+                        <button class="btn btn-success" type="button" ng-disabled="!quantityProcedure || selectedProcedure==undefined" ng-click="addProcedure()">Adicionar Procedimento</button>
+                    </div>           
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="material" class="control-label mb-1">Material</label>
+                        <select ng-model="selectedMaterial" ng-options="i.name for i in materialItem.data" class="form-control"></select>
                     </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="quantityMaterial" class="control-label mb-1">Quantidade</label>
+                        <input type="number" ng-model="quantityMaterial" min="1" value="1" class="form-control">
+                    </div>
+                    
+                   
                 </div>
+
+                <div class="form-group">
+                        <button class="btn btn-success" type="button" ng-disabled="!quantityMaterial || selectedMaterial==undefined" ng-click="addMaterial()">Adicionar Material</button>
+                    </div>
+
+
+                <table class="table table-striped">
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                        <th>Valor Individual</th>
+                        <th>Valor Total</th>
+                        <th>Ações</th>
+                    </tr>
+                    <tr ng-repeat="i in list">
+                        <td>{{i.type}}</td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.quantity_material || i.quantity_procedure}}</td>
+                        <td>{{i.individualPrice}}</td>
+                        <td>{{i.totalPrice}}</td>
+                        <td><button class="btn btn-danger" type="button" ng-click="deleteService($index)">Excluir</button></td>
+                    </tr>
+                </table>
+            
+                <div class="form-row">
+                    <div class="col-md-10 mb-3">
+                        <label for="payment" class="control-label mb-1">Forma de pagamento</label>
+                        <div class="form-check-inline form-check" required>
+                            <label for="inline-radio1" class="form-check-label ">
+                                <input type="radio" ng-model="radioBt" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input" ng-required="!radioBt">Dinheiro
+                            </label>
+                            <label for="inline-radio2" class="form-check-label ">
+                                <input type="radio" ng-model="radioBt" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input" ng-required="!radioBt">Cheque(à Vista)
+                            </label>
+                            <label for="inline-radio3" class="form-check-label ">
+                                <input type="radio" ng-model="radioBt" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input" ng-required="!radioBt">Cheque(Parcelado)
+                            </label>
+                        </div>                   
+                    </div>                    
+                </div>
+                
+                <button id="totalPriceButton" type="submit" class="btn btn-lg btn-secondary btn-block">
+                    <span id="payment-button-amount">Preço Total: R$ {{total_price}}</span>
+                </button>
             </form>
         </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
             </div>
         </div>
     </div>

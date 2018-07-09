@@ -1,0 +1,33 @@
+<html ng-app="schedule_medical">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendamento de Serviços Médico</title>
+    <link rel="stylesheet"
+    href="../vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet"
+    href="css/style.css">
+    <link rel="stylesheet" 
+    href="../vendor/fullcalendar/dist/fullcalendar.css"/>
+    <link rel="stylesheet" 
+    href="../vendor/angular-bootstrap/ui-bootstrap-csp.css"/>
+</head>
+<meta name="viewport" content="width=device-width">
+<meta charset="UTF-8">
+</head>
+<body>
+    <div ng-include="'partials/fragments/menu.html'"></div>
+    <div ng-view></div>
+    <div ng-include="'partials/fragments/footer.html'"></div>
+</body>
+<script type="text/javascript" src="../vendor/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../vendor/moment/min/moment.min.js"></script>
+<script src="../vendor/angular/angular.js"></script>
+<script src="../vendor/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="../vendor/angular-ui-calendar/src/calendar.js"></script>
+<script type="text/javascript" src="../vendor/fullcalendar/dist/fullcalendar.min.js"></script>
+<script type="text/javascript" src="../vendor/fullcalendar/dist/gcal.js"></script>
+<script src="js/main.js"></script>
+<script src="js/controllers/ScheduleController.js"></script>
+<script src="../vendor/angular-bootstrap/ui-bootstrap.min.js"></script>
+</html>

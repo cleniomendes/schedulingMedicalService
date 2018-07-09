@@ -1,0 +1,45 @@
+<div class="jumbotron">
+    <div class="container">
+    </div>
+</div>
+
+<div class="container">    
+    <div class="row">
+        <div class="col-md-4">
+        <h2>Marque sua consulta conosco</h2>
+        <p>Para realizar a marcação, escolha a data disponível no calendário ao lado e preencha o formulário</p>        
+        </div>
+        <div class="col-md-8">
+                <div ui-calendar="uiConfig.calendar" ng-model="eventSources">
+        </div>
+    </div>
+    <hr>
+</div>
+
+<!--<div id="calendarModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
+                    <h4 id="modalTitle" class="modal-title"></h4>
+                </div>
+                <div id="modalBody" class="modal-body"> </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+        </div>-->
+
+        <div modal="showModal" close="cancel()">
+            <div class="modal-header">
+                <h4>Modal Dialog</h4>
+            </div>
+            <div class="modal-body">
+                <p>Example paragraph with some text.</p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-success" ng-click="ok()">Okay</button>
+              <button class="btn" ng-click="cancel()">Cancel</button>
+            </div>
+          </div>        

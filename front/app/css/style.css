@@ -1,0 +1,8 @@
+.jumbotron {
+    background-image: url("../images/agendamento-online.png");
+    background-size: cover;
+    width: 100%; 
+    height: 300px;
+}
+
+.fc-day:hover{background:lightblue;cursor: pointer;}

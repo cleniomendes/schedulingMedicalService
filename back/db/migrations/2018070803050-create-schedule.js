@@ -23,6 +23,10 @@ module.exports = {
       payment: {
         type: Sequelize.STRING
       },
+      start: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

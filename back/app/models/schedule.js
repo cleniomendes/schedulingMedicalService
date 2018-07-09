@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     doctor: DataTypes.STRING,
     clinic: DataTypes.STRING,
     total_price: DataTypes.FLOAT,
-    payment: DataTypes.STRING
+    payment: DataTypes.STRING,
+    start: DataTypes.DATE
   }, {});
   Schedule.associate = function(models) {
     Schedule.belongsToMany(models.Material, {through: models.ScheduleMaterial, as:'scheduleHasMaterials', foreignKey: 'ScheduleId'});

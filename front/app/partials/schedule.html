@@ -16,30 +16,44 @@
     <hr>
 </div>
 
-<!--<div id="calendarModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
-                    <h4 id="modalTitle" class="modal-title"></h4>
+<div id="calendarModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{title}}</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
+            </div>
+        <div id="modalBody" class="modal-body"> 
+            <form>
+                <div class="form-group row">
+                    <label for="patientName" class="col-sm-2 col-form-label">Paciente</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" id="patientName" placeholder="paciente">
+                    </div>
                 </div>
-                <div id="modalBody" class="modal-body"> </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="form-group row">
+                    <label for="doctorName" class="col-sm-2 col-form-label">Médico</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" id="doctorName" placeholder="médico">
+                    </div>
                 </div>
+                <div class="form-group row">
+                    <label for="clinicName" class="col-sm-2 col-form-label">Consultório</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="clinicName" placeholder="consultório">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="clinicName" class="col-sm-2 col-form-label">Preço Total</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{total_price}}</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
-        </div>-->
-
-        <div modal="showModal" close="cancel()">
-            <div class="modal-header">
-                <h4>Modal Dialog</h4>
-            </div>
-            <div class="modal-body">
-                <p>Example paragraph with some text.</p>
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-success" ng-click="ok()">Okay</button>
-              <button class="btn" ng-click="cancel()">Cancel</button>
-            </div>
-          </div>        
+    </div>
+</div>

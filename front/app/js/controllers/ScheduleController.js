@@ -1,5 +1,5 @@
 angular.module('schedule_medical').controller('ScheduleController',
-function($scope, $http, $timeout) {
+function($scope, $http, $timeout, $window) {
     let eventCalendar = [];
     let removeOnEdit = [];
     $scope.dateEvent = "";
@@ -46,6 +46,7 @@ function($scope, $http, $timeout) {
               events: eventCalendar,
               eventClick: function(calEvent, jsEvent, view) {
                 $scope.title = "Edição"; 
+                $scope.enableDeleteBool=true;
                 findSheduling(calEvent.id,(result)=>{
                     fillScheduling(result);
                 });
@@ -224,6 +225,7 @@ function($scope, $http, $timeout) {
         $scope.radioBt = null;
         $scope.idScheduling = null;
         removeOnEdit = [];
+        $scope.enableDeleteBool=false;
     }
 
     $scope.closeModal = function(){
@@ -305,5 +307,20 @@ function($scope, $http, $timeout) {
         
 
         $('#calendarModal').modal();
+    }
+
+    $scope.deleteScheduling = function(){
+        let confirm = $window.confirm("Tem certeza que deseja excluir o agendamento?");
+        
+        if(confirm){
+            $http({
+            method: 'DELETE',
+            url: 'http://localhost:8000/api/schedule/'+$scope.idScheduling,
+            dataType: 'json'
+          }).then(function successCallback(result) {                      
+                $scope.closeModal();      
+            }, function errorCallback(response) {          
+        }); 
+        } 
     }
 });

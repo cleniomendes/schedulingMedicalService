@@ -21,23 +21,26 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">{{title}}</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
+                <button type="button" class="close" data-dismiss="modal" ng-click="closeModal()"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
             </div>
         <div id="modalBody" class="modal-body"> 
-            <form>
+            <form ng-submit="schedulingMedical()">
+                <div class="alert alert-success" ng-show="successMessagebool">
+                    <strong>{{successMessage}}</strong>
+                </div>
                 <div class="form-group">
                     <label for="patientName" class=" form-control-label">Paciente</label>
-                    <input type="text" id="patientName" placeholder="nome do paciente" class="form-control" required>
+                    <input type="text" ng-model="patientName" id="patientName" placeholder="nome do paciente" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label for="doctorName" class=" form-control-label">Médico</label>
-                    <input type="text" id="doctorName" placeholder="nome do médico" class="form-control" required>
+                    <input type="text" ng-model="doctorName" id="doctorName" placeholder="nome do médico" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label for="clinicName" class=" form-control-label">Consultório</label>
-                    <input type="text" id="clinicName" placeholder="nome do consultório" class="form-control" required>
+                    <input type="text" ng-model="clinicName" id="clinicName" placeholder="nome do consultório" class="form-control" required>
                 </div>                
         
                 <div class="form-row">
@@ -99,13 +102,13 @@
                         <label for="payment" class="control-label mb-1">Forma de pagamento</label>
                         <div class="form-check-inline form-check" required>
                             <label for="inline-radio1" class="form-check-label ">
-                                <input type="radio" ng-model="radioBt" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input" ng-required="!radioBt">Dinheiro
+                                <input type="radio" ng-model="radioBt" id="inline-radio1" name="inline-radios" value="Dinheiro" class="form-check-input" ng-required="!radioBt">Dinheiro
                             </label>
                             <label for="inline-radio2" class="form-check-label ">
-                                <input type="radio" ng-model="radioBt" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input" ng-required="!radioBt">Cheque(à Vista)
+                                <input type="radio" ng-model="radioBt" id="inline-radio2" name="inline-radios" value="Cheque(à Vista)" class="form-check-input" ng-required="!radioBt">Cheque(à Vista)
                             </label>
                             <label for="inline-radio3" class="form-check-label ">
-                                <input type="radio" ng-model="radioBt" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input" ng-required="!radioBt">Cheque(Parcelado)
+                                <input type="radio" ng-model="radioBt" id="inline-radio3" name="inline-radios" value="Cheque(Parcelado)" class="form-check-input" ng-required="!radioBt">Cheque(Parcelado)
                             </label>
                         </div>                   
                     </div>                    
@@ -117,7 +120,7 @@
             </form>
         </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="closeModal()">Fechar</button>
             </div>
         </div>
     </div>

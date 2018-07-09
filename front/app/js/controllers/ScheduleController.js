@@ -1,7 +1,10 @@
 angular.module('schedule_medical').controller('ScheduleController',
-function($scope, $http) {
+function($scope, $http, $timeout) {
+    let eventCalendar = []
+    let dateEvent = "";
     getProcedures();
     getMaterials();
+    getAllScheduling();
     
     $scope.uiConfig = {
         calendar:{      
@@ -35,37 +38,7 @@ function($scope, $http) {
               week: "Semana",
               day: "Dia"
           },
-          events: [
-            {
-                id: 1,
-                title: 'Clenio Mendes',
-                start: '2018-07-09',
-                textColor: '#63A223',
-                color: 'rgba(122, 214, 29, 0.31)'
-
-            },
-            {
-                id: 2,
-                title: 'Long Event',
-                start: '2018-07-09',
-                textColor: '#63A223',
-                color: 'rgba(122, 214, 29, 0.31)'
-            },
-            {
-                id: 3,
-                title: 'Teste',
-                start: '2018-07-09',
-                textColor: '#63A223',
-                color: 'rgba(122, 214, 29, 0.31)'
-            },
-            {
-                id: 4,
-                title: 'Teste',
-                start: '2018-07-09',
-                textColor: '#63A223',
-                color: 'rgba(122, 214, 29, 0.31)'
-            }
-          ],
+          events: eventCalendar,
           eventClick: function(calEvent, jsEvent, view) {
 
            console.log(calEvent.title);
@@ -73,6 +46,7 @@ function($scope, $http) {
           },
           dayClick: function(date, allDay, jsEvent, view) {
               $scope.title = "Agendar para dia " +  date.format('DD/MM/YYYY'); 
+              dateEvent = date.format('DD/MM/YYYY');
               $('#calendarModal').modal();
           },
         
@@ -163,4 +137,78 @@ function($scope, $http) {
         $scope.list.splice(index, 1);
         calcTotal();
     }
+
+    $scope.schedulingMedical = function(){
+        arrMaterial = [];
+        arrProcedure = [];
+        if ($scope.list.length>0){ 
+            $scope.list.forEach((d) => {
+                if(d.type==="Material"){
+                    arrMaterial.push({
+                        material: d.material,
+                        quantity_material: d.quantity_material
+                    });
+                }else if(d.type==="Procedimento"){
+                    arrProcedure.push({
+                        procedure: d.procedure,
+                        quantity_procedure: d.quantity_procedure
+                    });
+                }
+            });
+        }
+
+
+        let sendJson = {
+            "patient": $scope.patientName,
+            "doctor": $scope.doctorName,
+            "clinic": $scope.clinicName,
+            "total_price": $scope.total_price,
+            "payment": $scope.radioBt,
+            "start": dateEvent,
+            arrMaterial,
+            arrProcedure
+        }
+
+        $http({
+            method: 'POST',
+            url: 'http://localhost:8000/api/schedule',
+            data: sendJson,
+            dataType: 'json'
+          }).then(function successCallback(data) {        
+                $scope.successMessage = "Agendamento realizado com sucesso!";
+                $scope.successMessagebool = true;
+                $timeout(function () {
+                    $scope.successMessagebool = false;
+                }, 4000);
+                refresh();
+            }, function errorCallback(response) {          
+        });
+    }
+
+    function refresh(){
+        $scope.list=[];
+        $scope.patientName = null;
+        $scope.doctorName = null;
+        $scope.clinicName = null;
+        $scope.total_price = 0;
+        $scope.radioBt = null;
+    }
+
+    $scope.closeModal = function(){
+        getAllScheduling();
+        refresh();
+    }
+
+    function getAllScheduling(){
+        /*eventCalendar.push(
+            {
+                id: 1,
+                title: 'Clenio Mendes',
+                start: '2018-07-09',
+                textColor: '#63A223',
+                color: 'rgba(122, 214, 29, 0.31)'
+    
+            }
+        );*/        
+    }    
 });

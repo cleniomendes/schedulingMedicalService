@@ -19,6 +19,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
+      totalPrice: {
+        type: Sequelize.DECIMAL(10,2)
+      },
       ProcedureId: {
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',

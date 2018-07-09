@@ -9,4 +9,9 @@ body .modal-dialog {
     max-width: 85%;
     width: auto !important;
 }
+
+#tableList {
+    overflow: auto;
+    display: block;
+}
 /*.fc-day:hover{background:lightblue;cursor: pointer;}*/

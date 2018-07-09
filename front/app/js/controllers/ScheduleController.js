@@ -1,59 +1,68 @@
 angular.module('schedule_medical').controller('ScheduleController',
 function($scope, $http, $timeout) {
-    let eventCalendar = []
-    let dateEvent = "";
+    let eventCalendar = [];
+    $scope.dateEvent = "";
     getProcedures();
     getMaterials();
-    getAllScheduling();
+    getAllScheduling(()=>{
+        calendarConfig();
+    });
+
+     
+    function calendarConfig(){
+        $scope.uiConfig = {
+            calendar:{      
+              height: 450,
+              editable: false,
+              disableDragging: true,
+              header:{
+                left: 'month basicWeek basicDay',
+                center: 'title',
+                right: 'today prev,next',
+                ignoreTimezone: false
+              },
+              monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+              monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+              dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado'],
+              dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
     
-    $scope.uiConfig = {
-        calendar:{      
-          height: 450,
-          editable: false,
-          disableDragging: true,
-          header:{
-            left: 'month basicWeek basicDay',
-            center: 'title',
-            right: 'today prev,next',
-            ignoreTimezone: false
-          },
-          monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-          monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-          dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado'],
-          dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-
-          columnFormat: {
-              month: 'ddd',
-              week: 'ddd d',
-              day: ''
-          },
-          axisFormat: 'H:mm',
-          timeFormat: {
-              '': 'H:mm',
-              agenda: 'H:mm{ - H:mm}'
-          },
-          buttonText: {
-              today: "Hoje",
-              month: "Mês",
-              week: "Semana",
-              day: "Dia"
-          },
-          events: eventCalendar,
-          eventClick: function(calEvent, jsEvent, view) {
-
-           console.log(calEvent.title);
-        
-          },
-          dayClick: function(date, allDay, jsEvent, view) {
-              $scope.title = "Agendar para dia " +  date.format('DD/MM/YYYY'); 
-              dateEvent = date.format('DD/MM/YYYY');
-              $('#calendarModal').modal();
-          },
-        
-          eventDrop: $scope.alertOnDrop,
-          eventResize: $scope.alertOnResize
-        }
-      };      
+              columnFormat: {
+                  month: 'ddd',
+                  week: 'ddd d',
+                  day: ''
+              },
+              axisFormat: 'H:mm',
+              timeFormat: {
+                  '': 'H:mm',
+                  agenda: 'H:mm{ - H:mm}'
+              },
+              buttonText: {
+                  today: "Hoje",
+                  month: "Mês",
+                  week: "Semana",
+                  day: "Dia"
+              },
+              events: eventCalendar,
+              eventClick: function(calEvent, jsEvent, view) {
+                $scope.title = "Edição"; 
+                findSheduling(calEvent.id,(result)=>{
+                    fillScheduling(result);
+                });
+                
+                
+              },
+              dayClick: function(date, allDay, jsEvent, view) {
+                  $scope.title = "Agendar para dia "; 
+                  $scope.dateEvent=date.format('DD/MM/YYYY');
+                  $('#calendarModal').modal();
+              },
+            
+              eventDrop: $scope.alertOnDrop,
+              eventResize: $scope.alertOnResize
+            }
+          };  
+    }
+       
 
     $scope.list = [];
     $scope.title = "";
@@ -121,6 +130,7 @@ function($scope, $http, $timeout) {
 
         $scope.selectedMaterial=null;   
         $scope.quantityMaterial=null;
+        
         calcTotal();
     }
     function calcTotal(){
@@ -146,17 +156,18 @@ function($scope, $http, $timeout) {
                 if(d.type==="Material"){
                     arrMaterial.push({
                         material: d.material,
-                        quantity_material: d.quantity_material
+                        quantity_material: d.quantity_material,
+                        totalPrice: d.totalPrice
                     });
                 }else if(d.type==="Procedimento"){
                     arrProcedure.push({
                         procedure: d.procedure,
-                        quantity_procedure: d.quantity_procedure
+                        quantity_procedure: d.quantity_procedure,
+                        totalPrice: d.totalPrice
                     });
                 }
             });
         }
-
 
         let sendJson = {
             "patient": $scope.patientName,
@@ -164,25 +175,42 @@ function($scope, $http, $timeout) {
             "clinic": $scope.clinicName,
             "total_price": $scope.total_price,
             "payment": $scope.radioBt,
-            "start": dateEvent,
+            "start": $scope.dateEvent,
             arrMaterial,
             arrProcedure
         }
-
-        $http({
-            method: 'POST',
-            url: 'http://localhost:8000/api/schedule',
-            data: sendJson,
-            dataType: 'json'
-          }).then(function successCallback(data) {        
-                $scope.successMessage = "Agendamento realizado com sucesso!";
-                $scope.successMessagebool = true;
-                $timeout(function () {
-                    $scope.successMessagebool = false;
-                }, 4000);
-                refresh();
-            }, function errorCallback(response) {          
-        });
+        
+        if($scope.idScheduling){
+            $http({
+                method: 'PUT',
+                url: 'http://localhost:8000/api/schedule/'+$scope.idScheduling,
+                data: sendJson,
+                dataType: 'json'
+              }).then(function successCallback(data) {        
+                    $scope.successMessage = "Agendamento editado com sucesso!";
+                    $scope.successMessagebool = true;
+                    $timeout(function () {
+                        $scope.successMessagebool = false;
+                    }, 4000);
+                    refresh();
+                }, function errorCallback(response) {          
+            });
+        }else{
+            $http({
+                method: 'POST',
+                url: 'http://localhost:8000/api/schedule',
+                data: sendJson,
+                dataType: 'json'
+              }).then(function successCallback(data) {        
+                    $scope.successMessage = "Agendamento realizado com sucesso!";
+                    $scope.successMessagebool = true;
+                    $timeout(function () {
+                        $scope.successMessagebool = false;
+                    }, 4000);
+                    refresh();
+                }, function errorCallback(response) {          
+            });
+        }  
     }
 
     function refresh(){
@@ -192,23 +220,87 @@ function($scope, $http, $timeout) {
         $scope.clinicName = null;
         $scope.total_price = 0;
         $scope.radioBt = null;
+        $scope.idScheduling = null;
     }
 
     $scope.closeModal = function(){
-        getAllScheduling();
+        eventCalendar = [];
+        getAllScheduling(()=>{
+            calendarConfig();
+        });
         refresh();
     }
 
-    function getAllScheduling(){
-        /*eventCalendar.push(
-            {
-                id: 1,
-                title: 'Clenio Mendes',
-                start: '2018-07-09',
-                textColor: '#63A223',
-                color: 'rgba(122, 214, 29, 0.31)'
-    
-            }
-        );*/        
+    function getAllScheduling(callback){
+        $http({
+            method: 'GET',
+            url: 'http://localhost:8000/api/schedule',
+            dataType: 'json'
+          }).then(function successCallback(result) {                      
+              result.data.forEach(d =>{
+                    eventCalendar.push(
+                        {
+                            id: d.id,
+                            title: d.patient,
+                            start: moment(d.start,'YYYY-DD-MM').format('YYYY-MM-DD'),
+                            textColor: '#63A223',
+                            color: 'rgba(122, 214, 29, 0.31)'
+                
+                        }
+                    );
+                });
+                callback();
+            }, function errorCallback(response) {          
+        });       
+
     }    
+    function findSheduling(id,callback){
+        $http({
+            method: 'GET',
+            url: 'http://localhost:8000/api/schedule/'+id,
+            dataType: 'json'
+          }).then(function successCallback(result) {                      
+              callback(result);
+            }, function errorCallback(response) {          
+        });   
+    }
+
+    function fillScheduling(result){
+        $scope.dateEvent = moment(result.data.start,'YYYY-DD-MM').format('DD/MM/YYYY');
+        $scope.idScheduling = result.data.id;
+        $scope.patientName = result.data.patient;
+        $scope.doctorName = result.data.doctor;
+        $scope.clinicName = result.data.clinic;
+        $scope.total_price = result.data.total_price;
+        $scope.radioBt = result.data.payment;
+
+        if(result.data.scheduleHasMaterials.length>0){
+            result.data.scheduleHasMaterials.forEach(d => {
+                $scope.list.push({
+                    type: "Material",
+                    material: d.id,
+                    name: d.name,
+                    individualPrice: d.price,
+                    quantity_material: d.ScheduleMaterial.quantity,
+                    totalPrice: d.ScheduleMaterial.totalPrice
+                }); 
+            });
+        }
+
+        if( result.data.scheduleHasProcedures.length>0){
+            result.data.scheduleHasProcedures.forEach(d => {
+                $scope.list.push({
+                    type: "Procedimento",
+                    procedure: d.id,
+                    name: d.name,
+                    individualPrice: d.price,
+                    quantity_procedure: d.ScheduleProcedure.quantity,
+                    totalPrice: d.ScheduleProcedure.totalPrice
+                });
+            })
+        }
+        
+
+        $('#calendarModal').modal();
+    }
 });

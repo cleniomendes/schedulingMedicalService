@@ -1,0 +1,842 @@
+[
+    {
+        "id": 1912,
+        "name": "BIOPSIA - SAUDE RECIFE",
+        "code": "40202038",
+        "price": 31,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8250,
+        "name": "Cecostomia - Sulamerica",
+        "code": "40202062",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8253,
+        "name": "Cistoenterostomia com colocação de prótese ou dreno - Sulamerica",
+        "code": "40202070",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8237,
+        "name": "Colangiopancreatografia retrógrada endoscópica - Sulamerica",
+        "code": "40201074",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8255,
+        "name": "Colocação de prótese coledociana por via endoscópica - Sulamerica",
+        "code": "40202119",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1433,
+        "name": "Colonoscopia com biópsia e/ou citologia",
+        "code": "40202666",
+        "price": 780,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1800,
+        "name": "Colonoscopia com biópsia e/ou citologia - CASSI",
+        "code": "40202666",
+        "price": 541.64,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8256,
+        "name": "Colonoscopia com biópsia e/ou citologia - Sulamerica",
+        "code": "40202666",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8263,
+        "name": "Colonoscopia com cromoscopia e magnificação - Sulamerica",
+        "code": "40202135",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8258,
+        "name": "Colonoscopia com dilatação segmentar - Sulamerica",
+        "code": "40202674",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8262,
+        "name": "Colonoscopia com estenostomia - Sulamerica",
+        "code": "40202704",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 4550,
+        "name": "Colonoscopia com magnificação e tatuagem",
+        "code": "40202135",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8239,
+        "name": "Colonoscopia com magnificação - Sulamerica",
+        "code": "40201090",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8264,
+        "name": "Colonoscopia com mucosectomia - Sulamerica",
+        "code": "40202712",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8298,
+        "name": "COLONOSCOPIA COM OU SEM BIÓPSIA - SULAMERICA",
+        "code": "65622537",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 4554,
+        "name": "COLONOSCOPIA/DESCONTO AVISTA",
+        "code": "0",
+        "price": 702,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 4556,
+        "name": "COLONOSCOPIA /DESCONTO DEBITO",
+        "code": "0",
+        "price": 741,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8296,
+        "name": "COLONOSCOPIA + ENDOSCOPIA DIGESTIVA ALTA COM OU SEM BIÓPSIA - SULAMERICA",
+        "code": "65622510",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8295,
+        "name": "COLONOSCOPIA + ENDOSCOPIA DIGESTIVA ALTA + POLIPECTOMIA COM OU SEM BIÓPSIA - SULAMERICA",
+        "code": "65622502",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1432,
+        "name": "Colonoscopia (inclui a retossigmoidoscopia)",
+        "code": "40201082",
+        "price": 780,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1798,
+        "name": "Colonoscopia (inclui a retossigmoidoscopia) CASSI",
+        "code": "40201082",
+        "price": 541.64,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8238,
+        "name": "Colonoscopia (inclui a retossigmoidoscopia) - Sulamerica",
+        "code": "40202038",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8297,
+        "name": "COLONOSCOPIA + POLIPECTOMIA COM OU SEM BIÓPSIA - SULAMERICA",
+        "code": "65622529",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 2213,
+        "name": "COLONOSCOPIA + POLIPECTOMIA PARTICULAR",
+        "code": "0",
+        "price": 1080,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8368,
+        "name": "Colonoscopia sem biopsia - Sul America",
+        "code": "40201082",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 7961,
+        "name": "CONSULTA CPER",
+        "code": "10101004",
+        "price": 300,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 7959,
+        "name": "CPER + PAILOTOMIA",
+        "code": "40202518",
+        "price": 3500,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8265,
+        "name": "Descompressão colônica por colonoscopia - Sulamerica",
+        "code": "40202143",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8266,
+        "name": "Dilatação instrumental do esôfago, estômago ou duodeno - Sulamerica",
+        "code": "40202186",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8267,
+        "name": "Dilatação instrumental e injeção de substância medicamentosa por endoscopia - Sulamerica",
+        "code": "40202194",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8268,
+        "name": "Diverticulotomia - Sulamerica",
+        "code": "40202208",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8240,
+        "name": "Ecoendoscopia alta - Sulamerica",
+        "code": "40201104",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8241,
+        "name": "Ecoendoscopia baixa - Sulamerica",
+        "code": "40201112",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8269,
+        "name": "Ecoendoscopia com punção por agulha - Sulamerica",
+        "code": "40202240",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 4551,
+        "name": "ENDOSCOPIA /COM DESCONTO AVISTA",
+        "code": "0",
+        "price": 567,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 4552,
+        "name": "ENDOSCOPIA /DESCONTO DEBITO",
+        "code": "40202038",
+        "price": 598.5,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1430,
+        "name": "Endoscopia digestiva alta",
+        "code": "40201120",
+        "price": 630,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1797,
+        "name": "Endoscopia digestiva alta (CASSI)",
+        "code": "40201120",
+        "price": 391.05,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1431,
+        "name": "Endoscopia digestiva alta com biópsia e/ou citologia",
+        "code": "40202038",
+        "price": 630,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1799,
+        "name": "Endoscopia digestiva alta com biópsia e/ou citologia - CASSI",
+        "code": "40202038",
+        "price": 441.25,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8271,
+        "name": "Endoscopia digestiva alta com biópsia e/ou citologia - Sulamerica",
+        "code": "40202038",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1436,
+        "name": "Endoscopia digestiva alta com biópsia e teste de urease (pesquisa Helicobacter pylori)",
+        "code": "40202615",
+        "price": 550,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8270,
+        "name": "Endoscopia digestiva alta com biópsia e teste de urease (pesquisa Helicobacter pylori) - Sulamerica",
+        "code": "40202615",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8272,
+        "name": "Endoscopia digestiva alta com cromoscopia e biópsia e/ou citologia - Sulamerica",
+        "code": "40202747",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8243,
+        "name": "Endoscopia digestiva alta com cromoscopia - Sulamerica",
+        "code": "40201333",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8244,
+        "name": "Endoscopia digestiva alta com magnificação - Sulamerica",
+        "code": "40201139",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8300,
+        "name": "ENDOSCOPIA DIGESTIVA ALTA COM OU SEM BIÓPSIA - SULAMERICA",
+        "code": "65622553",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8242,
+        "name": "Endoscopia digestiva alta - Sulamerica",
+        "code": "40201120",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8299,
+        "name": "ENDOSCOPIA DIGESTIVA + POLIPECTOMIA COM OU SEM BIÓPSIA - SULAMERICA",
+        "code": "65622545",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 4553,
+        "name": "ENDOSCOPIA/POLIPECTOMIA",
+        "code": "0",
+        "price": 830,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8245,
+        "name": "Enteroscopia (push enteroscopia) - Sulamerica",
+        "code": "40201147",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8273,
+        "name": "Esclerose ou hemostasia química de varizes ou outras patologias hemorrágicas de esôfago, estômago ou duodeno - Sulamerica",
+        "code": "40202259",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8274,
+        "name": "Estenostomia endoscópica - Sulamerica",
+        "code": "40202267",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8275,
+        "name": "Gastrostomia endoscópica - Sulamerica",
+        "code": "40202283",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8276,
+        "name": "Hemostasia mecânica do esôfago, estômago ou duodeno - Sulamerica",
+        "code": "40202291",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8278,
+        "name": "Hemostasias de cólon - Sulamerica",
+        "code": "40202313",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8277,
+        "name": "Hemostasia térmica do esôfago, estômago ou duodeno - Sulamerica",
+        "code": "40202305",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8279,
+        "name": "Injeção de substância química não hemostática por endoscopia - Sulamerica",
+        "code": "40202330",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8280,
+        "name": "Introdução de prótese no esôfago - Sulamerica",
+        "code": "40202348",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8281,
+        "name": "Jejunostomia endoscópica - Sulamerica",
+        "code": "40202356",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 4569,
+        "name": "LIGADURA ELASTICA DO ESOFAGO,ESTOMAGO OU DUODENO",
+        "code": "40202453",
+        "price": 500,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8282,
+        "name": "Ligadura elástica do esôfago, estômago ou duodeno - Sulamerica",
+        "code": "40202453",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8283 ,
+        "name": "Mucosectomia do esôfago, estômago ou duodeno - Sulamerica",
+        "code": "40202470",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8284,
+        "name": "Papilotomia biópsia e/ou citologia biliar e pancreática - Sulamerica",
+        "code": "40202496",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8287,
+        "name": "Papilotomia, dilatação e colocação de prótese ou dreno biliar ou pancreático - Sulamerica",
+        "code": "40202526",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8285,
+        "name": "Papilotomia e dilatação biliar ou pancreática - Sulamerica",
+        "code": "40202500",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8286,
+        "name": "Papilotomia endoscópica (para retirada de cálculos coledocianos ou drenagem biliar) - Sulamerica",
+        "code": "40202518",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8288,
+        "name": "Passagem de sonda naso-enteral - Sulamerica",
+        "code": "40202534",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1528,
+        "name": "PCT COLONOSCOPIA C/BIOPSIA - AMIL",
+        "code": "90001435",
+        "price": 679.08,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1540,
+        "name": "PCT COLONOSCOPIA COM BIOPSIA - BRADESCO",
+        "code": "84230150",
+        "price": 526,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1550,
+        "name": "PCT COLONOSCOPIA COM BIOPSIA -SAUDE CAIXA",
+        "code": "80150020",
+        "price": 503,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1534,
+        "name": "PCT COLONOSCOPIA COM BIOPSIA - SULAMERICA",
+        "code": "64602532",
+        "price": 481.41,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1535,
+        "name": "PCT COLONOSCOPIA COM POLIPECTOMIA - SULAMERICA",
+        "code": "64602540",
+        "price": 748.86,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1545,
+        "name": "PCT COLONOSCOPIA-COMSAUDE",
+        "code": "99300002",
+        "price": 503,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1526,
+        "name": "PCT COLONOSCOPIA C/POLIPECTOMIA E BIOPSIA - AMIL",
+        "code": "90050002",
+        "price": 1517.74,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1537,
+        "name": "PCT COLONOSCOPIA+ENDOSCOPIA+BIOPSIA - SULAMERICA",
+        "code": "64602486",
+        "price": 561.45,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1538,
+        "name": "PCT COLONOSCOPIA+ENDOSCOPIA+POLIPECTOMIA - SULAMERICA",
+        "code": "64602478",
+        "price": 778.81,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1529,
+        "name": "PCT COLONOSCOPIA (HON/MAT/MED/TAXA) - GEAP",
+        "code": "95230025",
+        "price": 416,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1541,
+        "name": "PCT COLONOSCOPIA + POLIPECTOMIA - BRADESCO",
+        "code": "84230169",
+        "price": 831.08,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1546,
+        "name": "PCT COLONOSCOPIA +POLIPECTOMIA - COMSAUDE",
+        "code": "99300004",
+        "price": 950,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1527,
+        "name": "PCT COLONOSCOPIA S/BIOPSIA - AMIL",
+        "code": "90001451",
+        "price": 629.84,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1539,
+        "name": "PCT ENDOSCOPIA DIGESTIVA ALTA COM BIOPSIA - BRADESCO",
+        "code": "84230193",
+        "price": 447.1,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1549,
+        "name": "PCT ENDOSCOPIA DIGESTIVA ALTA COM BIOPSIA - SAUDE CAIXA",
+        "code": "80152031",
+        "price": 409,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1524,
+        "name": "PCT ENDOSCOPIA DIGESTIVA ALTA COM BIOSPIA E/OU CITOLOGIA (CONS C/HON) - AMIL",
+        "code": "90087640",
+        "price": 508.59,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1533,
+        "name": "PCT ENDOSCOPIA DIGESTIVA ALTA COM OU SEM  BIOPSIA  - SULAMERICA",
+        "code": "64602559",
+        "price": 374.43,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1530,
+        "name": "PCT ENDOSCOPIA DIGESTIVA ALTA - COMSAUDE",
+        "code": "99300001",
+        "price": 409,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1523,
+        "name": "PCT ENDOSCOPIA DIGESTIVA ALTA (CONS-C/HON) -AMIL",
+        "code": "90101634",
+        "price": 486.59,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1525,
+        "name": "PCT ENDOSCOPIA DIGESTIVA ALTA C/POLIPECTOMIA C/BIOPSIA - AMIL",
+        "code": "90062141",
+        "price": 1420.11,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1480,
+        "name": "PCT ENDOSCOPIA DIGESTIVA ALTA - GEAP",
+        "code": "95230033",
+        "price": 277,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1548,
+        "name": "PCT ENDOSCOPIA DIGESTIVA ALTA - SAUDE CAIXA",
+        "code": "80150047",
+        "price": 363,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1536,
+        "name": "PCT ENDOSCOPIA +POLIPECTOMIA - SULAMERICA",
+        "code": "64602567",
+        "price": 641.88,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1543,
+        "name": "PCT POLIPECTOMIA DO COLON - GEAP",
+        "code": "95230041",
+        "price": 644,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1542,
+        "name": "PCT POLIPECTOMIA GASTRICA - BRADESCO",
+        "code": "84230185",
+        "price": 736.4,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1547,
+        "name": "PCT POLIPECTOMIA GASTRICA-COMSAUDE",
+        "code": "99300003",
+        "price": 710,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1544,
+        "name": "PCT POLIPECTOMIA GASTRICA - GEAP",
+        "code": "95430385",
+        "price": 512.6,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1434,
+        "name": "Polipectomia de cólon (independente do número de pólipos)",
+        "code": "40202542",
+        "price": 500,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8289,
+        "name": "Polipectomia de cólon (independente do número de pólipos) - Sulamerica",
+        "code": "40202542",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 1435,
+        "name": "Polipectomia do esôfago, estômago ou duodeno (independente do número de pólipos)",
+        "code": "40202550",
+        "price": 650,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8290,
+        "name": "Polipectomia do esôfago, estômago ou duodeno (independente do número de pólipos) - Sulamerica",
+        "code": "40202550",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8291,
+        "name": "Retirada de corpo estranho do cólon - Sulamerica",
+        "code": "40202569",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 2623,
+        "name": "Retirada de corpo estranho do esôfago, estômago ou duodeno",
+        "code": "40202577",
+        "price": 234,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8292,
+        "name": "Retirada de corpo estranho do esôfago, estômago ou duodeno - Sulamerica",
+        "code": "40202577",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8293,
+        "name": "Retossigmoidoscopia flexível com biópsia e/ou citologia - Sulamerica",
+        "code": "40202690",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8294,
+        "name": "Retossigmoidoscopia flexível com polipectomia - Sulamerica",
+        "code": "40202682",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 8248,
+        "name": "Retossigmoidoscopia flexível - Sulamerica",
+        "code": "40201171",
+        "price": 0,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    }
+]

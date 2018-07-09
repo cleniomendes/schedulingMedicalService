@@ -1,0 +1,290 @@
+[
+    {
+        "id": 15,
+        "name": "SCALP N 21",
+        "code": "70852103",
+        "price": 7.15,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 26,
+        "name": "TAXA POR USO/SESSAO DE SALA DE COLONOSCOPIA",
+        "code": "60023244",
+        "price": 398.81,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 14,
+        "name": "SERINGA SEG C/RETRAÇÃO AUT AG 5M (25X7)",
+        "code": "70705615",
+        "price": 9.1,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 17,
+        "name": "DIAZEPAM",
+        "code": "90137299",
+        "price": 0.92,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 18,
+        "name": "NARCAN",
+        "code": "90047087",
+        "price": 13.36,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 19,
+        "name": "DORMONID 5 MG (1MG/ML)SOL.INJ.CX 5 AMPX5ML",
+        "code": "90184378",
+        "price": 8.91,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 25,
+        "name": "TAXA POR USO/SESSÃO DE SALA DE PROC.AMBULATORIAL",
+        "code": "60023384",
+        "price": 216.89,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 16,
+        "name": "AGUA PARA INJEÇÃO AMPOLA PLAST 10 MI",
+        "code": "20041874",
+        "price": 1.02,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 390,
+        "name": "TAXA DE MONITOR",
+        "code": "60031859",
+        "price": 50.43,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 385,
+        "name": "PINÇA BIOPSIA RADIAL JAW 4 LC S/AG.240CM 1332-20 - CASSI",
+        "code": "70876800",
+        "price": 150,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 387,
+        "name": "TAXA POR USO/SESSAO DE SALA DE ENDOSCOPIA DIGESTIVA ALTA",
+        "code": "60023287",
+        "price": 251.45,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 29,
+        "name": "ALUGUEL/TAXA DE EQUIPAMENTO P/ENDOSCOPIA DIGESTIVA ALTA COM VIDEO, POR USO",
+        "code": "60024330",
+        "price": 119.9,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 391,
+        "name": "CATETER PERIFERICO POLIURETANO-INSYTE - 1.00",
+        "code": "70851840",
+        "price": 7.15,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 671,
+        "name": "(1,39%) TAXA SALA ENDOSCOPIA C/PINÇA",
+        "code": "60023287",
+        "price": 315.23,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 674,
+        "name": "(1,48%) TAXA SALA ENDOSCOPIA C/PINÇA",
+        "code": "60023287",
+        "price": 251.45,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 677,
+        "name": "ALÇA DE POLIPECTOMIA OLYMPUS (S/TAXA)",
+        "code": "70018669",
+        "price": 323,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 678,
+        "name": "ALÇA DE POLIPECTOMIA OLYMPUS (C/TAXA)",
+        "code": "70018669",
+        "price": 403.75,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 676,
+        "name": "ALÇA DE POLIPECTOMIA W. COOK (C/TAXA)",
+        "code": "70019142",
+        "price": 403.75,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 675,
+        "name": "ALÇA DE POLIPECTOMIA W.COOK (S/TAXA)",
+        "code": "70019142",
+        "price": 323,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 672,
+        "name": "(1,44%) TAXA SALA ENDOSCOPIA C/PINÇA",
+        "code": "60023287",
+        "price": 277.3,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 673,
+        "name": "(1,31%) TAXA SALA COLONOSCOPIA C/PINÇA",
+        "code": "60023244",
+        "price": 342.92,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 670,
+        "name": "(1,34%) TAXA SALA COLONOSCOPIA C/PINÇA",
+        "code": "60023244",
+        "price": 353.1,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 669,
+        "name": "CESTA COLETORA DESC DE POLIPOS UNIMED",
+        "code": "19154995",
+        "price": 300,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 668,
+        "name": "ALÇA DE POLIPECTOMIA UNIMED",
+        "code": "19105079",
+        "price": 214.68,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 694,
+        "name": "TAXA DE PREPARO PARA COLONOSCOPIA",
+        "code": "60033495",
+        "price": 239.39,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 695,
+        "name": "PINCA PARA RETIRADA DE CORPO ESTRANHO TIPO TESOURA GASTRO",
+        "code": "70572194",
+        "price": 491.33,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 696,
+        "name": "REDE COLETORA POLIPOS 2,5MMX230CM (CESTA COLETOTA)",
+        "code": "19154987",
+        "price": 300,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 697,
+        "name": "ALCA DE POLIPECTOMIA",
+        "code": "19105079",
+        "price": 214.68,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 727,
+        "name": "AGULHA ESCLEROSE 23GX4MM CANAL 2,8MM COMP.165CM CNJ.COM 1CAMISA REUS.6AG.DESC.NM-4L-1",
+        "code": "70014086",
+        "price": 437,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 729,
+        "name": "AGULHA PARA ECLEROSE INTERJCT 23GX4MM 240CM 1835",
+        "code": "70016836",
+        "price": 529,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 730,
+        "name": "CLIP METALICO RESOLUTION DA BOSTON SCIENTIFIC",
+        "code": "70155232",
+        "price": 1736,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 731,
+        "name": "AGULHA PARA ESCLEROSE INTERJECT 23GX4MM BOSTON",
+        "code": "70016836",
+        "price": 529,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 732,
+        "name": "SISTEMA LIGADURA ELASTICA ESOFAGICA C/CONEXÃO LATERAL PARA IRRIGAÇÃO DESC",
+        "code": "19635976",
+        "price": 1980,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 733,
+        "name": "(1,39%)TAXA DE SALA COLONOSCOPIA C/PINÇA",
+        "code": "60023244",
+        "price": 310.61,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 741,
+        "name": "ALÇA DE POLIPECTOMIA G-FLEX  GF4575",
+        "code": "19265868",
+        "price": 323,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    },
+    {
+        "id": 742,
+        "name": "ALÇA DE POLIPECTOMIA G-FLEX GF4575 C/ TAXA 25%",
+        "code": "19265868",
+        "price": 403.75,
+        "createdAt":"2018-08-09",
+        "updatedAt":"2018-08-09"
+    }
+]

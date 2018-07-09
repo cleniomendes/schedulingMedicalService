@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       total_price: {
-        type: Sequelize.FLOAT
+        type: Sequelize.DECIMAL(10, 2) 
       },
       payment: {
         type: Sequelize.STRING

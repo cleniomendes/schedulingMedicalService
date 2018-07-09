@@ -33,7 +33,7 @@ module.exports = {
     delete(req,res){
         Schedule.destroy({
             where: {
-                id: req.body.id
+                id: req.params.id
             }
         }).then(function(data){
             res.json("Excluído com sucesso!");

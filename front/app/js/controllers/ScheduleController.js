@@ -1,6 +1,7 @@
 angular.module('schedule_medical').controller('ScheduleController',
 function($scope, $http, $timeout) {
     let eventCalendar = [];
+    let removeOnEdit = [];
     $scope.dateEvent = "";
     getProcedures();
     getMaterials();
@@ -144,7 +145,8 @@ function($scope, $http, $timeout) {
     }
 
     $scope.deleteService = function(index){
-        $scope.list.splice(index, 1);
+        removeOnEdit.push($scope.list[index]);
+        $scope.list.splice(index, 1);        
         calcTotal();
     }
 
@@ -184,7 +186,7 @@ function($scope, $http, $timeout) {
             $http({
                 method: 'PUT',
                 url: 'http://localhost:8000/api/schedule/'+$scope.idScheduling,
-                data: sendJson,
+                data: {sendJson,removeOnEdit},
                 dataType: 'json'
               }).then(function successCallback(data) {        
                     $scope.successMessage = "Agendamento editado com sucesso!";
@@ -221,6 +223,7 @@ function($scope, $http, $timeout) {
         $scope.total_price = 0;
         $scope.radioBt = null;
         $scope.idScheduling = null;
+        removeOnEdit = [];
     }
 
     $scope.closeModal = function(){

@@ -110,13 +110,25 @@ function($scope, $http) {
     }
 
     $scope.addProcedure = function(){
+        let totalWithOffer = 0.00;
+        let qtd = parseFloat($scope.quantityProcedure);
+        let price = parseFloat($scope.selectedProcedure.price);
+
+        if ($scope.selectedProcedure.code == '40202542' && $scope.quantityProcedure>1){     
+            totalWithOffer = ((qtd-1) * price * 0.40) + price;
+            totalWithOffer = totalWithOffer.toFixed(2);
+        }else{
+            totalWithOffer = (price * qtd).toFixed(2);
+        }
+
+
         $scope.list.push({
             type: "Procedimento",
             procedure: $scope.selectedProcedure.id,
             name: $scope.selectedProcedure.name,
             individualPrice: $scope.selectedProcedure.price,
             quantity_procedure: $scope.quantityProcedure,
-            totalPrice: parseFloat($scope.selectedProcedure.price * $scope.quantityProcedure).toFixed(2)
+            totalPrice: totalWithOffer
         });     
         $scope.selectedProcedure=null;   
         $scope.quantityProcedure=null;        

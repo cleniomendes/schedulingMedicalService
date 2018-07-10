@@ -4,6 +4,8 @@ function($scope, $http, $timeout, $window) {
     let urlLocal = "http://localhost:3000/"
     let eventCalendar = [];
     let removeOnEdit = [];
+    $scope.selectedProcedure = {};
+    $scope.selectedMaterial={};
     $scope.dateEvent = "";
     $scope.buttonName = "Salvar Agendamento";
     $scope.loadButton=false;
@@ -60,7 +62,7 @@ function($scope, $http, $timeout, $window) {
               dayClick: function(date, allDay, jsEvent, view) {
                   $scope.title = "Agendar para dia "; 
                   $scope.dateEvent=date.format('DD/MM/YYYY');
-                  $('#calendarModal').modal();
+                  $('#calendarModal').modal({backdrop: 'static', keyboard: false});
               },
             
               eventDrop: $scope.alertOnDrop,
@@ -78,7 +80,7 @@ function($scope, $http, $timeout, $window) {
         $scope.procedureItem = [];
         $http({
             method: 'GET',
-            url: urlLocal+'api/procedure',
+            url: urlAWS+'api/procedure',
             dataType: 'json'
           }).then(function successCallback(data) {
                 $scope.procedureItem = data;
@@ -90,7 +92,7 @@ function($scope, $http, $timeout, $window) {
         $scope.materialItem = [];
         $http({
             method: 'GET',
-            url: urlLocal+'api/material',
+            url: urlAWS+'api/material',
             dataType: 'json'
           }).then(function successCallback(data) {
                 $scope.materialItem = data;
@@ -101,9 +103,9 @@ function($scope, $http, $timeout, $window) {
     $scope.addProcedure = function(){
         let totalWithOffer = 0.00;
         let qtd = parseFloat($scope.quantityProcedure);
-        let price = parseFloat($scope.selectedProcedure.price);
+        let price = parseFloat($scope.selectedProcedure.selected.price);
 
-        if ($scope.selectedProcedure.code == '40202542' && $scope.quantityProcedure>1){     
+        if ($scope.selectedProcedure.selected.code == '40202542' && $scope.quantityProcedure>1){     
             totalWithOffer = ((qtd-1) * price * 0.40) + price;
             totalWithOffer = totalWithOffer.toFixed(2);
         }else{
@@ -113,13 +115,13 @@ function($scope, $http, $timeout, $window) {
 
         $scope.list.push({
             type: "Procedimento",
-            procedure: $scope.selectedProcedure.id,
-            name: $scope.selectedProcedure.name,
-            individualPrice: $scope.selectedProcedure.price,
+            procedure: $scope.selectedProcedure.selected.id,
+            name: $scope.selectedProcedure.selected.name,
+            individualPrice: $scope.selectedProcedure.selected.price,
             quantity_procedure: $scope.quantityProcedure,
             totalPrice: totalWithOffer
         });     
-        $scope.selectedProcedure=null;   
+        $scope.selectedProcedure={};   
         $scope.quantityProcedure=null;        
         calcTotal();
     }
@@ -127,14 +129,14 @@ function($scope, $http, $timeout, $window) {
     $scope.addMaterial = function(){
         $scope.list.push({
             type: "Material",
-            material: $scope.selectedMaterial.id,
-            name: $scope.selectedMaterial.name,
-            individualPrice: $scope.selectedMaterial.price,
+            material: $scope.selectedMaterial.selected.id,
+            name: $scope.selectedMaterial.selected.name,
+            individualPrice: $scope.selectedMaterial.selected.price,
             quantity_material: $scope.quantityMaterial,
-            totalPrice: parseFloat($scope.selectedMaterial.price * $scope.quantityMaterial).toFixed(2)
+            totalPrice: parseFloat($scope.selectedMaterial.selected.price * $scope.quantityMaterial).toFixed(2)
         });     
 
-        $scope.selectedMaterial=null;   
+        $scope.selectedMaterial={};   
         $scope.quantityMaterial=null;
         
         calcTotal();
@@ -192,7 +194,7 @@ function($scope, $http, $timeout, $window) {
         if($scope.idScheduling){
             $http({
                 method: 'PUT',
-                url: urlLocal+'api/schedule/'+$scope.idScheduling,
+                url: urlAWS+'api/schedule/'+$scope.idScheduling,
                 data: {sendJson,removeOnEdit},
                 dataType: 'json'
               }).then(function successCallback(data) {        
@@ -209,7 +211,7 @@ function($scope, $http, $timeout, $window) {
         }else{
             $http({
                 method: 'POST',
-                url: urlLocal+'api/schedule',
+                url: urlAWS+'api/schedule',
                 data: sendJson,
                 dataType: 'json'
               }).then(function successCallback(data) {        
@@ -236,6 +238,10 @@ function($scope, $http, $timeout, $window) {
         $scope.idScheduling = null;
         removeOnEdit = [];
         $scope.enableDeleteBool=false;
+        $scope.selectedMaterial={};   
+        $scope.quantityMaterial=null;
+        $scope.selectedProcedure={};   
+        $scope.quantityProcedure=null;
     }
 
     $scope.closeModal = function(){
@@ -249,7 +255,7 @@ function($scope, $http, $timeout, $window) {
     function getAllScheduling(callback){
         $http({
             method: 'GET',
-            url: urlLocal+'api/schedule',
+            url: urlAWS+'api/schedule',
             dataType: 'json'
           }).then(function successCallback(result) {                      
               result.data.forEach(d =>{
@@ -272,7 +278,7 @@ function($scope, $http, $timeout, $window) {
     function findSheduling(id,callback){
         $http({
             method: 'GET',
-            url: urlLocal+'api/schedule/'+id,
+            url: urlAWS+'api/schedule/'+id,
             dataType: 'json'
           }).then(function successCallback(result) {                      
               callback(result);
@@ -316,7 +322,7 @@ function($scope, $http, $timeout, $window) {
         }
         
 
-        $('#calendarModal').modal();
+        $('#calendarModal').modal({backdrop: 'static', keyboard: false});
     }
 
     $scope.deleteScheduling = function(){
@@ -325,12 +331,12 @@ function($scope, $http, $timeout, $window) {
         if(confirm){
             $http({
             method: 'DELETE',
-            url: urlLocal+'api/schedule/'+$scope.idScheduling,
+            url: urlAWS+'api/schedule/'+$scope.idScheduling,
             dataType: 'json'
           }).then(function successCallback(result) {                      
                 $scope.closeModal();      
             }, function errorCallback(response) {          
         }); 
         } 
-    }
+    } 
 });

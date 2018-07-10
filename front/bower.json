@@ -18,7 +18,6 @@
     "angular-ui-calendar": "^1.0.2",
     "bootstrap": "4.0.0",
     "select2": "^4.0.5",
-    "angular-ui-select": "^0.19.8",
-    "angular-sanitize": "^1.7.2"
+    "angular-ui-select": "^0.19.8"    
   }
 }

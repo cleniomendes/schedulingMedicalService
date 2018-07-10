@@ -46,7 +46,16 @@
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label for="procedure" class="control-label mb-1">Procedimento</label>
-                        <select ng-model="selectedProcedure" ng-options="i as i.name for i in procedureItem.data" class="form-control"></select>
+                        <!--<select ng-model="selectedProcedure" ng-options="i as i.name for i in procedureItem.data" class="form-control"></select>-->                   
+                        <ui-select class="form-control no-border" theme="bootstrap" ng-disabled="disabled" ng-model="selectedProcedure.selected">
+                            <ui-select-match placeholder="Selecione um procedimento na lista ou pesquise o nome">{{$select.selected.name}}</ui-select-match>
+                            <ui-select-choices repeat="selectedProcedure in procedureItem.data | filter: $select.search">
+                                <div ng-bind-html="selectedProcedure.name | highlight: $select.search"></div>
+                                    <small>
+                                        Código: {{selectedProcedure.code}}</span>
+                                    </small>                                
+                            </ui-select-choices>
+                          </ui-select>
                     </div>
                     
                     <div class="col-md-3 mb-3">
@@ -56,13 +65,22 @@
                 </div>
                   
                 <div class="form-group">
-                        <button class="btn btn-success" type="button" ng-disabled="!quantityProcedure || selectedProcedure==undefined" ng-click="addProcedure()">Adicionar Procedimento</button>
+                        <button class="btn btn-success" ng-disabled="!quantityProcedure || selectedProcedure.selected==undefined" type="button"  ng-click="addProcedure()">Adicionar Procedimento</button>
                     </div>           
 
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label for="material" class="control-label mb-1">Material</label>
-                        <select ng-model="selectedMaterial" ng-options="i.name for i in materialItem.data" class="form-control"></select>
+                        <!--<select ng-model="selectedMaterial" ng-options="i.name for i in materialItem.data" class="form-control"></select>-->
+                        <ui-select class="form-control" theme="bootstrap" ng-disabled="disabled" ng-model="selectedMaterial.selected">
+                            <ui-select-match placeholder="Selecione um material na lista ou pesquise o nome">{{$select.selected.name}}</ui-select-match>
+                            <ui-select-choices repeat="selectedMaterial in materialItem.data | filter: $select.search">
+                                <div ng-bind-html="selectedMaterial.name | highlight: $select.search"></div>
+                                    <small>
+                                        Código: {{selectedMaterial.code}}</span>
+                                    </small>                                
+                            </ui-select-choices>
+                          </ui-select>
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="quantityMaterial" class="control-label mb-1">Quantidade</label>
@@ -71,7 +89,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button class="btn btn-success" type="button" ng-disabled="!quantityMaterial || selectedMaterial==undefined" ng-click="addMaterial()">Adicionar Material</button>
+                    <button class="btn btn-success" type="button" ng-disabled="!quantityMaterial || selectedMaterial.selected==undefined" ng-click="addMaterial()">Adicionar Material</button>
                 </div>
 
                 <table id="tableList" class="table table-striped">

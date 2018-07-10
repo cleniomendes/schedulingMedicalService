@@ -14,4 +14,7 @@ body .modal-dialog {
     overflow: auto;
     display: block;
 }
-/*.fc-day:hover{background:lightblue;cursor: pointer;}*/
+
+.open > .dropdown-menu {
+    display: block;
+}

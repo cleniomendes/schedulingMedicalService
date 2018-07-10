@@ -1,4 +1,4 @@
-var app = angular.module('schedule_medical', ['ngRoute', 'ui.calendar']);
+var app = angular.module('schedule_medical', ['ngRoute', 'ngSanitize', 'ui.calendar', 'ui.select']);
 app.config(function($routeProvider) {
         $routeProvider.when('/', {
             templateUrl: 'partials/schedule.html',

@@ -41,21 +41,20 @@
                 <div class="form-group">
                     <label for="clinicName" class=" form-control-label">Consultório</label>
                     <input type="text" ng-model="clinicName" id="clinicName" placeholder="nome do consultório" class="form-control" required>
-                </div>                
-        
+                </div>                            
+
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label for="procedure" class="control-label mb-1">Procedimento</label>
                         <select ng-model="selectedProcedure" ng-options="i as i.name for i in procedureItem.data" class="form-control"></select>
                     </div>
+                    
                     <div class="col-md-3 mb-3">
                         <label for="quantityProcedure" class="control-label mb-1">Quantidade</label>
                         <input type="number" ng-model="quantityProcedure" min="1" value="1" class="form-control">
                     </div>                    
-
-                    
                 </div>
-
+                  
                 <div class="form-group">
                         <button class="btn btn-success" type="button" ng-disabled="!quantityProcedure || selectedProcedure==undefined" ng-click="addProcedure()">Adicionar Procedimento</button>
                     </div>           
@@ -69,14 +68,11 @@
                         <label for="quantityMaterial" class="control-label mb-1">Quantidade</label>
                         <input type="number" ng-model="quantityMaterial" min="1" value="1" class="form-control">
                     </div>
-                    
-                   
                 </div>
 
                 <div class="form-group">
-                        <button class="btn btn-success" type="button" ng-disabled="!quantityMaterial || selectedMaterial==undefined" ng-click="addMaterial()">Adicionar Material</button>
-                    </div>
-
+                    <button class="btn btn-success" type="button" ng-disabled="!quantityMaterial || selectedMaterial==undefined" ng-click="addMaterial()">Adicionar Material</button>
+                </div>
 
                 <table id="tableList" class="table table-striped">
                     <tr>
@@ -113,16 +109,16 @@
                         </div>                   
                     </div>                    
                 </div>
-                
-                <button id="totalPriceButton" type="submit" class="btn btn-lg btn-secondary btn-block">
-                    <span id="payment-button-amount">Preço Total: R$ {{total_price}}</span>
-                </button>
+                <div class="alert alert-dark text-center" role="alert">
+                    <strong>Preço Total: R$ {{total_price}}</strong>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" ng-disabled="loadButton">{{buttonName}}</button>
+                    <button ng-show="enableDeleteBool" type="button" class="btn btn-danger" data-dismiss="modal" ng-click="deleteScheduling()">Exluir Agendamento</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="closeModal()">Fechar</button>
+                </div>
             </form>
-        </div>
-            <div class="modal-footer">
-                <button ng-show="enableDeleteBool" type="button" class="btn btn-danger" data-dismiss="modal" ng-click="deleteScheduling()">Exluir Agendamento</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="closeModal()">Fechar</button>
-            </div>
+        </div>           
         </div>
     </div>
 </div>

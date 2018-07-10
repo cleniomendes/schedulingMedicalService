@@ -1,8 +1,12 @@
 angular.module('schedule_medical').controller('ScheduleController',
-function($scope, $http, $timeout, $window) {
+function($scope, $http, $timeout, $window) {    
+    let urlAWS = "http://medical-service.us-east-1.elasticbeanstalk.com/"
+    let urlLocal = "http://localhost:3000/"
     let eventCalendar = [];
     let removeOnEdit = [];
     $scope.dateEvent = "";
+    $scope.buttonName = "Salvar Agendamento";
+    $scope.loadButton=false;
     getProcedures();
     getMaterials();
     getAllScheduling(()=>{
@@ -74,7 +78,7 @@ function($scope, $http, $timeout, $window) {
         $scope.procedureItem = [];
         $http({
             method: 'GET',
-            url: 'http://localhost:8000/api/procedure',
+            url: urlLocal+'api/procedure',
             dataType: 'json'
           }).then(function successCallback(data) {
                 $scope.procedureItem = data;
@@ -86,7 +90,7 @@ function($scope, $http, $timeout, $window) {
         $scope.materialItem = [];
         $http({
             method: 'GET',
-            url: 'http://localhost:8000/api/material',
+            url: urlLocal+'api/material',
             dataType: 'json'
           }).then(function successCallback(data) {
                 $scope.materialItem = data;
@@ -152,6 +156,8 @@ function($scope, $http, $timeout, $window) {
     }
 
     $scope.schedulingMedical = function(){
+        $scope.buttonName = "Carregando...";
+        $scope.loadButton = true;
         arrMaterial = [];
         arrProcedure = [];
         if ($scope.list.length>0){ 
@@ -186,12 +192,14 @@ function($scope, $http, $timeout, $window) {
         if($scope.idScheduling){
             $http({
                 method: 'PUT',
-                url: 'http://localhost:8000/api/schedule/'+$scope.idScheduling,
+                url: urlLocal+'api/schedule/'+$scope.idScheduling,
                 data: {sendJson,removeOnEdit},
                 dataType: 'json'
               }).then(function successCallback(data) {        
                     $scope.successMessage = "Agendamento editado com sucesso!";
                     $scope.successMessagebool = true;
+                    $scope.buttonName = "Salvar Agendamento";
+                    $scope.loadButton = false;
                     $timeout(function () {
                         $scope.successMessagebool = false;
                     }, 4000);
@@ -201,12 +209,14 @@ function($scope, $http, $timeout, $window) {
         }else{
             $http({
                 method: 'POST',
-                url: 'http://localhost:8000/api/schedule',
+                url: urlLocal+'api/schedule',
                 data: sendJson,
                 dataType: 'json'
               }).then(function successCallback(data) {        
                     $scope.successMessage = "Agendamento realizado com sucesso!";
                     $scope.successMessagebool = true;
+                    $scope.buttonName = "Salvar Agendamento";
+                    $scope.loadButton = false;
                     $timeout(function () {
                         $scope.successMessagebool = false;
                     }, 4000);
@@ -239,7 +249,7 @@ function($scope, $http, $timeout, $window) {
     function getAllScheduling(callback){
         $http({
             method: 'GET',
-            url: 'http://localhost:8000/api/schedule',
+            url: urlLocal+'api/schedule',
             dataType: 'json'
           }).then(function successCallback(result) {                      
               result.data.forEach(d =>{
@@ -262,7 +272,7 @@ function($scope, $http, $timeout, $window) {
     function findSheduling(id,callback){
         $http({
             method: 'GET',
-            url: 'http://localhost:8000/api/schedule/'+id,
+            url: urlLocal+'api/schedule/'+id,
             dataType: 'json'
           }).then(function successCallback(result) {                      
               callback(result);
@@ -315,7 +325,7 @@ function($scope, $http, $timeout, $window) {
         if(confirm){
             $http({
             method: 'DELETE',
-            url: 'http://localhost:8000/api/schedule/'+$scope.idScheduling,
+            url: urlLocal+'api/schedule/'+$scope.idScheduling,
             dataType: 'json'
           }).then(function successCallback(result) {                      
                 $scope.closeModal();      

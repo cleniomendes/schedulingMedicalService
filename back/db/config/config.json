@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "postgres",
-    "password": 144407,
-    "database": "medical-service",
-    "host": "127.0.0.1",
+    "username": "clenio",
+    "password": "Clenio158963",
+    "database": "medical_service",
+    "host": "cleniodbinstance.ck9ajkhxkeax.us-east-1.rds.amazonaws.com",
     "port": 5432,
     "dialect": "postgres"
   },

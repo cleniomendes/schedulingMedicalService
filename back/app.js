@@ -1,9 +1,11 @@
+const http = require('http');
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const port = process.env.PORT || 3000;
 
 const app = express();
-
+app.set('port', port);
 app.use(logger('dev'));
 
 // Add headers
@@ -32,5 +34,5 @@ require('./app/routes/scheduleRoute')(app);
 require('./app/routes/procedureRoute')(app);
 require('./app/routes/materialRoute')(app);
 
-
-module.exports = app;
+const server = http.createServer(app);
+server.listen(port);
